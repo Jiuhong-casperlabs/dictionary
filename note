@@ -1,0 +1,31 @@
+casper-client put-deploy --chain-name casper-test \
+--node-address http://16.162.124.124:7777 \
+--secret-key /home/jiuhong/my-project/keys/test12/secret_key.pem \
+--session-path /home/jiuhong/rust/dictionary/contract/target/wasm32-unknown-unknown/release/contract.wasm \
+--payment-amount 11000000000
+
+get dictionary value:
+casper-client get-dictionary-item \
+--dictionary-item-key DefaultKey \
+--dictionary-name dictionary \
+--contract-hash "hash-46a154043b3caf80482da2518a9eff23448a152d1c359262244684a8ee1bb918" \
+--state-root-hash d39225629679ebaa0bc429518614874d77ff00a2181497cc051369acbb7161de \
+--node-address http://16.162.124.124:7777
+
+or
+casper-client get-dictionary-item \
+--dictionary-item-key DefaultKey \
+--seed-uref uref-ca0f4f57ee63a0b49888d0732c053b5e9e321cdee3b41b54fce1cdd106160c2f-007 \
+--state-root-hash d39225629679ebaa0bc429518614874d77ff00a2181497cc051369acbb7161de \
+-n http://16.162.124.124:7777
+
+casper-client get-dictionary-item \
+--dictionary-item-key DefaultKey \
+--dictionary-address "dictionary-69a0351e30decd72eb1566c8c3372eddf3549f41edbff531a905c484fb7b856b" \
+--state-root-hash c8cfc64cabf9a80fc6c04265039c176ae7c7e3c9bc353286e7c710c78813d20c \
+-n http://16.162.124.124:7777
+
+casper-client get-dictionary-item \
+--dictionary-address "dictionary-69a0351e30decd72eb1566c8c3372eddf3549f41edbff531a905c484fb7b856b" \
+--state-root-hash c8cfc64cabf9a80fc6c04265039c176ae7c7e3c9bc353286e7c710c78813d20c \
+-n http://16.162.124.124:7777
